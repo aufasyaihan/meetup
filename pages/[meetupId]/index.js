@@ -32,7 +32,7 @@ export async function getStaticPaths() {
   client.close();
 
   return {
-    fallback: false,
+    fallback: "blocking", // means that the page will be generated on the server if it doesn't exist
     paths: meetups.map((meetup) => ({
       params: { meetupId: meetup._id.toString() },
     })),
