@@ -4,7 +4,7 @@ export default async function postNewMeetupHandler(req, res) {
   if (req.method === "POST") {
     const data = req.body;
 
-    const client = MongoClient.connect(
+    const client = await MongoClient.connect(
       "mongodb+srv://admin:excelsior%21@learn-nextjs.udjuyoj.mongodb.net/?retryWrites=true&w=majority&appName=learn-nextjs"
     );
     const db = client.db();
